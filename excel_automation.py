@@ -34,6 +34,7 @@ class Dlg(QMainWindow):
         
         self.plotType = QComboBox(self)
         self.plotType.addItems(['bar','hist','line'])
+        # self.plotType.currentTextChanged.connect(self.updateChartValue)
         self.plotType.move(100,150)
 
 
@@ -57,9 +58,7 @@ class Dlg(QMainWindow):
     def plotChartEvent(self):
         global df
         self.canvas.show()
-
         self.ax = self.canvas.figure.subplots()
-
         df.plot(kind=self.plotType.currentText(),ax=self.ax)
         self.ax.set_xlabel(self.colSelect_x.currentText())
         self.ax.set_ylabel(self.colSelect_y.currentText())
