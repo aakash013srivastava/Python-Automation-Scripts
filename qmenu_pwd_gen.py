@@ -34,7 +34,20 @@ class Window(QMainWindow):
 
         self.newAction.triggered.connect(self.new_pwd_gen)
         self.exitAction.triggered.connect(self.exit_code)
+        self.helpAction.triggered.connect(self.help_code)
+        self.aboutAction.triggered.connect(self.about_code)
 
+    
+
+    def about_code(self):
+        self.qmb.setText("About Page")
+        self.qmb.show()
+
+
+    def help_code(self):
+        self.qmb.setText("Help Page")
+        self.qmb.show()
+    
     def exit_code(self):
         sys.exit()
 
